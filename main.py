@@ -9,6 +9,8 @@ class NewGame:
         self.max = config.max
         self.goal = config.randint(1, self.max)
         self.turns = 0
+
+    def start(self):
         self.new_round()
 
     # this method checks if the input of the user is equal to, less or higher than the guess.
@@ -31,3 +33,4 @@ class NewGame:
 
 # setting game as a new game
 game = NewGame()
+game.start()
