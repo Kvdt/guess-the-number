@@ -1,13 +1,13 @@
-from random import randint
+import config
 
 
 class NewGame:
-    print('Guess the number\nby Kolja von der Twer')
+    print(config.welcomemsg)
 
     # initiating a new game, by setting all parameters you need and then starting a new iterative round
     def __init__(self):
-        self.max = int(input('Please enter your grade of difficulty:\n'))
-        self.goal = randint(1, self.max)
+        self.max = config.max
+        self.goal = config.randint(1, self.max)
         self.turns = 0
         self.new_round()
 
@@ -17,9 +17,8 @@ class NewGame:
         guess = int(input('Please guess your number:\n'))
         # this prevents the script from saying 0 turns
         if guess == self.goal:
-            if self.turns == 0:
-                self.turns = 1
-            print('congratulations, you won the game in ' + str(self.turns) + ' turns!')
+            self.turns += 1
+            print('congratulations, you won the game in ' + str(self.turns20) + ' turns!')
         elif guess > self.goal:
             print('The number you entered was higher than the expected number')
             self.turns += 1
