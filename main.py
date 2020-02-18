@@ -1,5 +1,5 @@
 import config
-
+from termcolor import colored
 
 class NewGame:
     print(config.welcomemsg)
@@ -18,7 +18,7 @@ class NewGame:
         # this prevents the script from saying 0 turns
         if guess == self.goal:
             self.turns += 1
-            print('congratulations, you won the game in ' + str(self.turns20) + ' turns!')
+            print(colored('congratulations, you won the game in ' + str(self.turns) + ' turns!', 'yellow'))
         elif guess > self.goal:
             print('The number you entered was higher than the expected number')
             self.turns += 1
