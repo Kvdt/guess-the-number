@@ -30,5 +30,5 @@ class NewGame:
 
 
 # setting game as a new game
-game = NewGame()
+game = NewGame(20)
 game.start()
